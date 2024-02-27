@@ -1,5 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+body {
+  max-width: 100%;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -43,6 +47,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
   color: #888;
 }
 
-img{
-  height: 100px;
+img {
+  max-width: 100%;
+}
+
+div {
+  padding-right: 20px;
+}
+
+.row {
+  display: block;
+}
+
+.col {
+  display: inline-block;
+  width: 40%;
 }

@@ -5,9 +5,9 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-function Gallery(props) {
+function Gallery() {
 
-const beastsPerRow = 4; // Number of beasts per row
+const beastsPerRow = 2; // Number of beasts per row
 const numRows = Math.ceil(hornedBeastValues.length / beastsPerRow); // Calculate number of rows
 
 let gridArray = [];
@@ -23,7 +23,7 @@ return (
     {gridArray.map((row, rowIndex) => (
       <Row key={rowIndex}>
         {row.map((beast, colIndex) => (
-          <Col key={colIndex} xs={12} sm={6} md={3}>
+          <Col key={colIndex}>
             <HornedBeast title={beast.title} imageUrl={beast.image_url} description={beast.description} />
           </Col>
         ))}
