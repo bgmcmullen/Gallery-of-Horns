@@ -1,15 +1,36 @@
 /* eslint-disable react/prop-types */
-import HornedBeast from "./HornedBeast"
+import HornedBeast from "./HornedBeast";
+import hornedBeastValues from '../assets/data.json';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
-function Gallery(props){
-  return(
-  <>
-  <HornedBeast title={props.imagesArray[0].title} imageUrl={props.imagesArray[0].image_url} description={props.imagesArray[0].description}/>
-  <HornedBeast title={props.imagesArray[1].title} imageUrl={props.imagesArray[1].image_url} description={props.imagesArray[1].description}/>
-  <HornedBeast title={props.imagesArray[2].title} imageUrl={props.imagesArray[2].image_url} description={props.imagesArray[2].description}/>
-  </>
-  )
+function Gallery() {
 
+const beastsPerRow = 2; // Number of beasts per row
+const numRows = Math.ceil(hornedBeastValues.length / beastsPerRow); // Calculate number of rows
+
+let gridArray = [];
+
+  // Create an array of arrays to represent rows and columns
+  for (let i = 0; i < numRows; i++) {
+    gridArray.push(hornedBeastValues.slice(i * beastsPerRow, (i + 1) * beastsPerRow));
+  }
+  console.log(gridArray);
+
+return (
+  <Container>
+    {gridArray.map((row, rowIndex) => (
+      <Row key={rowIndex}>
+        {row.map((beast, colIndex) => (
+          <Col key={colIndex}>
+            <HornedBeast title={beast.title} imageUrl={beast.image_url} description={beast.description} />
+          </Col>
+        ))}
+      </Row>
+    ))}
+  </Container>
+);
 }
 
 export default Gallery
