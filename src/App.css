@@ -1,4 +1,13 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+body {
+  max-width: 100%;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px;
+  text-align: center;
+}
 
 body {
   max-width: 100%;
@@ -39,27 +48,8 @@ body {
   }
 }
 
-.card {
-  padding: 2em;
-}
-
 .read-the-docs {
   color: #888;
 }
 
-img {
-  max-width: 100%;
-}
 
-div {
-  padding-right: 20px;
-}
-
-.row {
-  display: block;
-}
-
-.col {
-  display: inline-block;
-  width: 40%;
-}
