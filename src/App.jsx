@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import Gallery from './components/Gallery'
 import SelectedBeast from './components/SelectedBeast'
 import hornedBeastValues from './assets/data.json';
+import NumberOfHorns from './components/NumberOfHorns';
 
 
 function App() {
@@ -14,15 +15,27 @@ function App() {
     setSelectedBeastsObject(hornedBeastValues[newSelectedBeast]);
   }
 
+  const [selectedNumber, setSelectedOption] = useState('All');
+
+  const handleSelectChange = (selection) => {
+    setSelectedOption(selection);
+  };
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  let chosenHornedBeastValues
+
+  chosenHornedBeastValues = hornedBeastValues.filter((element) => (element.horns === Number(selectedNumber) || selectedNumber === 'All'));
+
+
   return (
     <>
     <Header/>
-    <Gallery data={hornedBeastValues} addSelectedBeast={addSelectedBeast} handleShow={handleShow}/>
+    <NumberOfHorns handleSelectChange={handleSelectChange}/>
+    <Gallery data={chosenHornedBeastValues} addSelectedBeast={addSelectedBeast} handleShow={handleShow}/>
     <Footer/>
     <SelectedBeast         
         title={selectedBeastObject.title}
