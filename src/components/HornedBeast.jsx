@@ -19,7 +19,7 @@ function HornedBeast(props){
           <Card.Title>{props.title}</Card.Title>
           <Card.Img variant="top" onClick={() => {
             addFavorite();
-            props.addSelectedBeast(props.index);
+            props.addSelectedBeast(props._id);
             props.showModal();
             }} src={props.imageUrl} alt={props.alt}/>
           <div id="favorites">❤️{favorites}</div>
