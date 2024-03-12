@@ -12,7 +12,7 @@ function App() {
   let [selectedBeastObject, setSelectedBeastsObject] = useState(hornedBeastValues[0]);
 
   function addSelectedBeast(newSelectedBeast){  
-    setSelectedBeastsObject(hornedBeastValues[newSelectedBeast]);
+    setSelectedBeastsObject(hornedBeastValues[newSelectedBeast-1]);
   }
 
   const [selectedNumber, setSelectedOption] = useState('All');
