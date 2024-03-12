@@ -5,8 +5,6 @@ import Card from 'react-bootstrap/Card';
 
 function HornedBeast(props){
 
-  console.log(window.innerWidth);
-
   let [favorites, setfavorites] = useState(0);
 
   function addFavorite() {
